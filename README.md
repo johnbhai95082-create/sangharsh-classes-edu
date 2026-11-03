@@ -1,11 +1,15 @@
-# संघर्ष क्लासेज — Fresh Website
+# संघर्ष क्लासेज — Login Upgrade
 
-A clean fresh version of the संघर्ष क्लासेज cinematic education website.
+This package keeps the existing cinematic website design and adds a working browser-based student login flow:
 
-## Included
-- index.html — complete responsive website
-- notes/class-10-chemistry-chapter-1.pdf — Class 10 Chemistry Chapter 1 notes
+- Login / Create Account tabs
+- Full name, mobile/email, class and password during signup
+- Password show/hide
+- Forgot-password demo flow
+- Student dashboard after login
+- Logout
+- Navbar automatically changes Login → Dashboard when signed in
+- Data stored in browser localStorage for demo purposes
 
-## Publishing
-Upload the contents of this folder to a fresh GitHub repository and enable GitHub Pages from:
-Settings → Pages → Deploy from a branch → main → /(root)
+## Important
+GitHub Pages is a static host. This login is a **frontend demo**, not secure production authentication. For real accounts that work across devices, connect Firebase Authentication, Supabase Auth, or another backend/auth service before collecting real passwords.
