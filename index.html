@@ -39,10 +39,10 @@ a{text-decoration:none;color:inherit}button{font:inherit}
 </head>
 <body>
 <nav class="nav"><div class="navin">
-<a class="brand" href="#"><div class="brandmark">🎓📖</div><div><b>संघर्ष क्लासेज</b><span>Sangharsh Classes</span></div></a>
+<a class="brand" href="index.html"><div class="brandmark">🎓📖</div><div><b>संघर्ष क्लासेज</b><span>Sangharsh Classes</span></div></a>
 <div class="tagline">Study • Practice • Revise • Succeed</div>
-<div class="links"><a href="#home">⌂ Home</a><a href="#materials">Study Material⌄</a><a href="#tests">Test Series</a><a href="#resources">Resources⌄</a><a href="#about">About</a></div>
-<a class="login" href="#login">👤 Login</a>
+<div class="links"><a href="index.html">⌂ Home</a><a href="study-material.html">Study Material</a><a href="test-series.html">Test Series</a><a href="resources.html">Resources</a><a href="about.html">About</a></div>
+<a class="login" href="login.html">👤 Login</a>
 </div></nav>
 
 <main id="home">
@@ -52,7 +52,7 @@ a{text-decoration:none;color:inherit}button{font:inherit}
 <h1>संघर्ष <span class="gold">क्लासेज</span></h1>
 <h3>Learn Better • Practice More • Score Higher</h3>
 <p>कक्षा 6 से 12 तक के लिए Notes, Important Questions, MCQ, Revision, Test Series और Exam Oriented सामग्री — एक ही जगह पर।</p>
-<div class="actions"><a class="btn primary" href="#materials">▶ Start Studying Now →</a><a class="btn" href="#materials">📖 Explore Materials</a></div>
+<div class="actions"><a class="btn primary" href="study-material.html">▶ Start Studying Now →</a><a class="btn" href="study-material.html">📖 Explore Materials</a></div>
 </div>
 <div class="visual">
 <div class="student-boy" aria-label="Student boy">
@@ -87,7 +87,7 @@ a{text-decoration:none;color:inherit}button{font:inherit}
 </section>
 
 <section class="section" id="tests"><div class="features">
-<div class="feature"><div class="fi">📄</div><b>Study Notes</b><span>Chapter-wise Notes (PDF)</span><a class="notes-btn" href="notes/class-10-chemistry-chapter-1.pdf" target="_blank">📥 Class 10 Ch-1 Notes</a></div><div class="feature"><div class="fi">❓</div><b>Important Questions</b><span>Most Expected Questions</span></div><div class="feature"><div class="fi">📚</div><b>MCQ Practice</b><span>Objective + Answers</span></div><div class="feature"><div class="fi">⚡</div><b>Test Series</b><span>Chapter & Full Test</span></div><div class="feature"><div class="fi">🔄</div><b>Revision</b><span>Quick & Short Notes</span></div><div class="feature"><div class="fi">📊</div><b>Score Booster</b><span>Exam Oriented Material</span></div>
+<div class="feature"><div class="fi">📄</div><b>Study Notes</b><span>Chapter-wise Notes (PDF)</span><a class="notes-btn" href="notes/class-10-chemistry-chapter-1.pdf" target="_blank" rel="noopener">📥 Class 10 Ch-1 Notes</a></div><div class="feature"><div class="fi">❓</div><b>Important Questions</b><span>Most Expected Questions</span></div><div class="feature"><div class="fi">📚</div><b>MCQ Practice</b><span>Objective + Answers</span></div><div class="feature"><div class="fi">⚡</div><b>Test Series</b><span>Chapter & Full Test</span></div><div class="feature"><div class="fi">🔄</div><b>Revision</b><span>Quick & Short Notes</span></div><div class="feature"><div class="fi">📊</div><b>Score Booster</b><span>Exam Oriented Material</span></div>
 <div class="feature"><div class="fi">🪔</div><b>हिंदी</b><span>व्याकरण • साहित्य • लेखन</span></div>
 <div class="feature"><div class="fi">🕉️</div><b>संस्कृत</b><span>व्याकरण • श्लोक • अनुवाद</span></div>
 </div></section>
@@ -99,3 +99,14 @@ document.querySelectorAll('.class').forEach((b,i)=>b.addEventListener('click',()
 </script>
 </body>
 </html>
+<script>
+document.querySelectorAll('.class').forEach((el,i)=>{
+  el.style.cursor='pointer';
+  el.addEventListener('click',()=>location.href='study-material.html?class='+(i+6));
+});
+document.querySelectorAll('.feature').forEach(el=>{
+  const t=(el.innerText||'').toLowerCase();
+  if(t.includes('test series')) el.addEventListener('click',()=>location.href='test-series.html');
+  else if(t.includes('study notes')||t.includes('important questions')||t.includes('mcq')) el.addEventListener('click',()=>location.href='study-material.html');
+});
+</script>
