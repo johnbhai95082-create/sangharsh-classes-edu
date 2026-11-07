@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 6 | संघर्ष क्लासेज</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="nav"><div class="navin"><a class="brand" href="index.html"><span class="brand-icon">🎓📖</span><span>संघर्ष क्लासेज<small>SANGHARSH CLASSES</small></span></a><div class="navlinks"><a href="index.html">← Home</a><a href="#subjects">Subjects</a><a href="#study">Study Material</a></div></div></nav>
+<main class="wrap"><section class="hero"><span class="eyebrow">🎓 SANGHARSH CLASSES • CLASS 6</span>
+<h1>Class 6 <span class="gold">Dashboard</span></h1><p class="muted">कक्षा 6 के सभी विषयों के लिए अलग-अलग notes, chapters, important questions, MCQ और test practice यहाँ मिलेगी।</p>
+<div class="toolbar"><a class="btn secondary" href="index.html">← सभी Classes</a><a class="btn" href="#subjects">Subjects देखें ↓</a></div></section>
+<section id="subjects"><div class="section-title"><h2>📚 Class 6 के Subjects</h2><small>विषय चुनकर आगे बढ़ें</small></div><div class="subject-grid"><article class="subject-card"><div class="emoji">📚</div><h3>हिंदी</h3><p>इस विषय के chapter-wise notes, important questions, MCQ और practice material.</p><button class="btn" onclick="selectSubject(0)">विषय खोलें →</button></article>
+<article class="subject-card"><div class="emoji">📚</div><h3>English</h3><p>इस विषय के chapter-wise notes, important questions, MCQ और practice material.</p><button class="btn" onclick="selectSubject(1)">विषय खोलें →</button></article>
+<article class="subject-card"><div class="emoji">📚</div><h3>गणित</h3><p>इस विषय के chapter-wise notes, important questions, MCQ और practice material.</p><button class="btn" onclick="selectSubject(2)">विषय खोलें →</button></article>
+<article class="subject-card"><div class="emoji">📚</div><h3>विज्ञान</h3><p>इस विषय के chapter-wise notes, important questions, MCQ और practice material.</p><button class="btn" onclick="selectSubject(3)">विषय खोलें →</button></article>
+<article class="subject-card"><div class="emoji">📚</div><h3>सामाजिक विज्ञान</h3><p>इस विषय के chapter-wise notes, important questions, MCQ और practice material.</p><button class="btn" onclick="selectSubject(4)">विषय खोलें →</button></article>
+<article class="subject-card"><div class="emoji">📚</div><h3>संस्कृत</h3><p>इस विषय के chapter-wise notes, important questions, MCQ और practice material.</p><button class="btn" onclick="selectSubject(5)">विषय खोलें →</button></article></div></section>
+<section id="study"><div class="section-title"><h2>📝 Study Material</h2><small id="chosenSubject">पहले कोई विषय चुनें</small></div>
+<div class="panel content-panel"><div class="toolbar"><button class="tab active" data-tab="notes">📘 Notes</button><button class="tab" data-tab="questions">❓ Important Questions</button><button class="tab" data-tab="mcq">🎯 MCQ Practice</button><button class="tab" data-tab="tests">🏆 Tests</button></div>
+<div id="materialContent"><div class="notice">किसी Subject पर क्लिक करें। उसके बाद यहाँ उस विषय के chapters और study sections दिखेंगे।</div></div></div></section>
+</main><footer>© 2026 संघर्ष क्लासेज • Class 6</footer>
+<script>
+const subjects=['हिंदी', 'English', 'गणित', 'विज्ञान', 'सामाजिक विज्ञान', 'संस्कृत'];
+let activeSubject="";
+function selectSubject(i){activeSubject=subjects[i];document.getElementById('chosenSubject').textContent=activeSubject;renderTab('notes');document.getElementById('study').scrollIntoView({behavior:'smooth'})}
+function renderTab(tab){
+ const area=document.getElementById('materialContent');
+ if(!activeSubject){area.innerHTML='<div class="notice">पहले ऊपर से कोई Subject चुनें।</div>';return}
+ const labels={notes:'Chapter-wise Notes',questions:'Important Questions',mcq:'MCQ Practice',tests:'Chapter & Full Tests'};
+ const messages={
+ notes:'यहाँ '+activeSubject+' के chapter-wise notes और PDF links जोड़े जा सकते हैं।',
+ questions:'यहाँ '+activeSubject+' के chapter-wise महत्वपूर्ण प्रश्न जोड़े जा सकते हैं।',
+ mcq:'यहाँ '+activeSubject+' के objective questions और answers जोड़े जा सकते हैं।',
+ tests:'यहाँ '+activeSubject+' के chapter test और full syllabus test जोड़े जा सकते हैं।'
+ };
+ area.innerHTML='<h3>'+labels[tab]+' — '+activeSubject+'</h3><div class="notice">'+messages[tab]+'<br><br>अभी इस section में वास्तविक सामग्री upload करनी बाकी है।</div>';
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderTab(b.dataset.tab)}));
+</script></body></html>
